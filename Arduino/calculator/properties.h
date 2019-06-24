@@ -19,8 +19,8 @@
 #define dimmerPin 6
 #define dimmerMaxPower 40
 #define dimmerMinPower 10
-#define infoButtonPin 9
-#define synthButtonPin 8
+#define infoButtonPin 8
+#define synthButtonPin 9
 #define buttonLamp1 18
 #define buttonLamp2 17
 #define ledNumPixels 31
@@ -54,5 +54,6 @@ const int numbers[10][7] = {
     {1, 1, 1, 1, 0, 1, 1}  //9
 };
 const int rpiPins[] = {2, 3};
-const int encoderPins[] = {22, 23, 24, 25, 26, 27};
+//const int encoderPins[] = {22, 23, 24, 25, 26, 27};
+const int encoderPins[] = {24, 25, 26, 27, 22, 23};
 #endif
