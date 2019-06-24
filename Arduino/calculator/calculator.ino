@@ -10,8 +10,8 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd1(0x3E, 20, 4);
-LiquidCrystal_I2C lcd2(0x25, 20, 4);
+LiquidCrystal_I2C lcd1(0x3D, 20, 4);
+LiquidCrystal_I2C lcd2(0x26, 20, 4);
 LiquidCrystal_I2C lcd3(0x23, 20, 4);
 dimmerLamp dimmer1(6);
 

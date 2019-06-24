@@ -19,10 +19,10 @@
 #define dimmerPin 6
 #define dimmerMaxPower 40
 #define dimmerMinPower 10
-#define infoButtonPin 28
-#define synthButtonPin 29
-#define buttonLamp1 17
-#define buttonLamp2 18
+#define infoButtonPin 9
+#define synthButtonPin 8
+#define buttonLamp1 15
+#define buttonLamp2 14
 #define ledNumPixels 31
 #define symbolsNumPixels 3
 #define lightshowTime 2
@@ -38,7 +38,7 @@
 #define timeBeforeSkip 5000
 const int sda[] = {28, 30, 32};
 const int scl[] = {29, 31, 33};
-const int nixiesPins[] = {16, 15, 14};
+const int nixiesPins[] = {16, 17, 18};
 const int buttonPins[] = { synthButtonPin, infoButtonPin };
 const int buttonLampPins[] = { buttonLamp1, buttonLamp2 };
 const int numbers[10][7] = {
@@ -54,5 +54,5 @@ const int numbers[10][7] = {
     {1, 1, 1, 1, 0, 1, 1}  //9
 };
 const int rpiPins[] = {2, 3};
-const int encoderPins[] = {22, 23, 24, 25, 26, 27};
+const int encoderPins[] = {24, 25, 22, 23, 26, 27};
 #endif
