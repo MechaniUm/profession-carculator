@@ -12,7 +12,9 @@ import json
 from properties import *
 
 
-
+"""Insert newlines in header text
+   IDK why I wrote another function for this
+"""
 def insert_newlines_header(string):
     l = len(string)
     s = ""
@@ -38,6 +40,7 @@ def insert_newlines_header(string):
         i+=1
     return s
 
+"""Insert newlines in description text every w_max chars"""
 def insert_newlines(string, w_max=44):
     l = len(string)
     s = ""
@@ -66,8 +69,6 @@ def insert_newlines(string, w_max=44):
 class Application(Frame):
 
     def set_volume(self, volume):
-        #self.sounds['good'].set_volume(volume / 1000)
-        #self.sounds['info'].set_volume(volume / 1000)
         for key in self.sounds:
             self.sounds[key].set_volume(volume / 1000)
 
@@ -76,14 +77,9 @@ class Application(Frame):
         self.c.pack()
         self.background_img = self.c.create_image(0,0,image=self.background_filename,anchor=NW, tag='main')
         self.profession_img = self.c.create_image(237,299,image=self.images[self.images_numbers['Министр']], tag='main')
-        #self.c.create_image(237,299,image=self.images[self.images_numbers['Министр']], tag='prof_img')
         self.info_img = self.c.create_image(0,0,image=self.info_filename, tag='info', anchor=NW)
         self.question_img = self.c.create_image(0,0,image=self.question_filename, tag='question', anchor=NW)
-        self.logo_img = self.c.create_image(0,0,image=self.logo_filename, tag='logo', anchor=NW)
-        
-        #self.profession_name = Label(self, text='', font=self.fonts['h'],bg='white',fg="#29395f")
-        #self.about = Label(self, text=insert_newlines(''), bg='white',font=self.fonts['p'], justify='left')
-        
+        self.logo_img = self.c.create_image(0,0,image=self.logo_filename, tag='logo', anchor=NW)       
         self.profession_name = self.c.create_text(740,200,anchor=S,font='FuturaPT 30', tag='main', fill="#29395f")
         self.about = self.c.create_text(490,270,anchor=NW, font='FuturaPt 18', tag='main')
         
@@ -103,7 +99,6 @@ class Application(Frame):
         self.sounds['info'].play()
 
     def go_to_sleep(self):
-        #self.forget_labels()
         self.c.tag_raise('logo')
         
     def show_next(self):
@@ -141,8 +136,6 @@ class Application(Frame):
             "id_q": self.data['q']
         })
         tmp = cursor.fetchone()
-        #self.profession_name.configure(text=insert_newlines_header(tmp[0]))
-        #self.about.configure(text=insert_newlines(tmp[1]))
         filename = self.images[self.images_numbers[tmp[2]]]
         self.sounds[tmp[2]].play()
         self.data['p'] = str(int(tmp[3]) + 1)
@@ -204,8 +197,6 @@ class Application(Frame):
                 pass
     
     def stop_sounds(self):
-        #self.sounds['info'].stop()
-        #self.sounds['good'].stop()
         for key in self.sounds:
             self.sounds[key].stop()
     
